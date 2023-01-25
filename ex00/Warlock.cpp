@@ -29,6 +29,7 @@ Warlock &Warlock::operator=(Warlock const &src)
 {
 	this->name = src.name;
 	this->title = src.title;
+	return *this;
 }
 
 Warlock::Warlock(){}
