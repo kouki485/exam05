@@ -33,3 +33,55 @@ Warlock &Warlock::operator=(Warlock const &src)
 }
 
 Warlock::Warlock(){}
+
+void Warlock::learnSpell(ASpell *spell)
+{
+	std::vector<ASpell *>::iterator its = magic.begin();
+	std::vector<ASpell *>::iterator ite = magic.end();
+
+	if(spell)
+	{
+		while(its != ite)
+		{
+			if((*its)->getName() == spell->getName())
+				return;
+			its++;
+		}
+		this->magic.push_back(spell->clone());
+	}
+}
+
+void Warlock::forgetSpell(std::string name)
+{
+	std::vector<ASpell *>::iterator its = magic.begin();
+	std::vector<ASpell *>::iterator ite = magic.end();
+
+
+	while(its != ite)
+	{
+		if((*its)->getName() == name)
+		{
+			delete *its;
+			this->magic.erase(its);
+			return ;
+		}
+		its++;
+	}
+}
+
+void Warlock::launchSpell(std::string name,const ATarget &target)
+{
+	std::vector<ASpell *>::iterator its = magic.begin();
+	std::vector<ASpell *>::iterator ite = magic.end();
+
+
+	while(its != ite)
+	{
+		if((*its)->getName() == name)
+		{
+			(*its)->launch(target);
+			return ;
+		}
+		its++;
+	}
+}

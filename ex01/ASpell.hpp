@@ -5,6 +5,8 @@
 #include <string>
 #include "ATarget.hpp"
 
+class ATarget;
+
 class ASpell
 {
 	private:
@@ -19,7 +21,7 @@ class ASpell
 		ASpell(const ASpell &rhs);
 		virtual ~ASpell();
 		virtual ASpell *clone() const = 0;
-		void lauch(const ATarget & target) const;
+		void launch(const ATarget & target) const;
 };
 
 #endif

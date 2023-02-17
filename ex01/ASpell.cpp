@@ -18,7 +18,7 @@ ASpell &ASpell::operator=(const ASpell &rhs)
 	return *this;
 }
 
-void ASpell::lauch(const ATarget & target) const
+void ASpell::launch(const ATarget & target) const
 {
 	target.getHitBySpell(*this);
 }
