@@ -83,12 +83,10 @@ void Warlock::launchSpell(std::string name,const ATarget &target)
 	std::vector<ASpell *>::iterator its = magic.begin();
 	std::vector<ASpell *>::iterator ite = magic.end();
 
-	std::cout << "hello2\n";
 	while(its != ite)
 	{
 		if((*its)->getName() == name)
 		{
-			std::cout << "hello\n";
 			(*its)->launch(target);
 			return ;
 		}
