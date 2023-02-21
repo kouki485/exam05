@@ -1,6 +1,6 @@
 #include "Dummy.hpp"
 
-Dummy::Dummy():ATarget("Target Practice Dumm"){}
+Dummy::Dummy():ATarget("Target Practice Dummy"){}
 
 Dummy::~Dummy(){}
 

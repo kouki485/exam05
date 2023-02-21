@@ -4,9 +4,9 @@ const std::string &Warlock::getName() const{return name;}
 
 const std::string &Warlock::getTitle() const{return title;}
 
-void Warlock::setTitle(const std::string title){this->title = title;}
+void Warlock::setTitle(const std::string &title){this->title = title;}
 
-Warlock::Warlock(const std::string name,const std::string title)
+Warlock::Warlock(const std::string &name,const std::string &title)
 {
 	this->name = name;
 	setTitle(title);
